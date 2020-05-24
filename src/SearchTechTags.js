@@ -50,7 +50,7 @@ export default function SearchTechTags() {
             <Autocomplete
             multiple
             id="tags-outlined"
-            options={values.map(option => option.title)}
+            options={values.map(option => option.mainTag)}
             filterSelectedOptions
             //freeSolo
             renderInput={params => (
