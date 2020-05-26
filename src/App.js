@@ -15,7 +15,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-            <NavBar/>
+        <NavBar/>
         <Route path="/SearchTechTags" component={SearchTechTags}/>
         <Route path="/searchProjsTags" component={SearchIssue}/>
         <h1>Counter {counter}</h1>
