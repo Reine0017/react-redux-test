@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import * as contentful from 'contentful';
 import Chip from '@material-ui/core/Chip';
 import Autocomplete from '@material-ui/lab/Autocomplete';
-import {makeStyles, withTheme} from '@material-ui/core/styles';
+import {makeStyles} from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 
 const client = contentful.createClient({

@@ -4,6 +4,8 @@ import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 import IconButton from '@material-ui/core/IconButton'
 import AccountCircle from '@material-ui/icons/AccountCircleTwoTone'
+import AppBar from '@material-ui/core/AppBar'
+import Toolbar from '@material-ui/core/Toolbar'
 
 import {useSelector, useDispatch} from 'react-redux';
 import {logIN_OUT} from './actions';
@@ -36,30 +38,39 @@ function NavBar(){
     const dispatch = useDispatch();
 
     return(
-        //<div className={classes.root}>
-        <div className={classes.nav}>
-            <Button>
-                <Typography variant="title">Home Page</Typography>
-            </Button>
-            <Button>
-                <Typography variant="title">Community Feed</Typography>
-            </Button>
-            <Button>
-                <Typography variant="title">Leaderboards</Typography>
-            </Button>
-            <Button onClick={()=>dispatch(logIN_OUT())}>{isLogged?
-                <Typography variant="title">Log Out</Typography>
-                :<Typography variant="title">Log In</Typography>}
-            </Button>
-            {/* classes.spacer doesnt work
-            <div className={classes.spacer}></div> */}
-            {isLogged ?
-                <div>
-                    <IconButton><AccountCircle/></IconButton>
-                </div>
-                    :""}
-        </div>
-        //</div>
+      <AppBar position="static">
+          <Toolbar>
+            <Typography variant="h5">Nous</Typography>
+              <div className={classes.nav}>
+              <Button>
+                  <Typography variant="title">Main Page</Typography>
+              </Button>
+              <Button>
+                  <Typography variant="title">Community Feed</Typography>
+              </Button>
+              <Button>
+                  <Typography variant="title">Leaderboards</Typography>
+              </Button>
+              <Button>
+                  <Typography variant="title">About</Typography>
+              </Button>
+              <Button onClick={()=>dispatch(logIN_OUT())}>{isLogged?
+                  <Typography variant="title">Log Out</Typography>
+                  :<Typography variant="title">Log In</Typography>}
+              </Button>
+              {/* classes.spacer doesnt work
+              <div className={classes.spacer}></div> */}
+              {isLogged ?
+                  <div>
+                      <Button>
+                        <Typography variant="title">Personal Page</Typography>
+                      </Button>
+                      <IconButton><AccountCircle/></IconButton>
+                  </div>
+                      :""}
+              </div>
+          </Toolbar>
+      </AppBar>
     )
 }
 
